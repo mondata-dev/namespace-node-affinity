@@ -13,7 +13,7 @@ spec:
       serviceAccountName: namespace-node-affinity
       containers:
       - name: mutator
-        image: idgenchev/namespace-node-affinity
+        image: idgenchev/namespace-node-affinity@sha256:f171d69db71c5fcdb572e19b593e1b3a5b8a4833b482305d51930ee09b0477f9
         volumeMounts:
         - mountPath: /etc/webhook/certs
           name: webhook-certs
@@ -36,7 +36,7 @@ spec:
                 fieldPath: metadata.namespace
       initContainers:
       - name: init-webhook
-        image: idgenchev/namespace-node-affinity-init-container
+        image: idgenchev/namespace-node-affinity-init-container@sha256:15f1a3c1517169969c037bab72e82cfedd6a042239f867ef8f33a19956a0c361
         volumeMounts:
         - mountPath: /etc/webhook/certs
           name: webhook-certs
